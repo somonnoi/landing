@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Somonnoi | সমন্বয় — Coaching, Connected</title>
-<meta name="description" content="Somonnoi partners with trusted local coaching teachers across Bangladesh's districts, bringing quality, brand, and reach to every classroom.">
+<title>সমন্বয় | Education Network — শিক্ষক, বাড়ির কাছেই</title>
+<meta name="description" content="সমন্বয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে যুক্ত হয়, প্রতিটি ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Noto+Serif+Bengali:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      PLACEHOLDER PALETTE — swap these five values once Joy
@@ -25,12 +25,12 @@
   body{
     background:var(--paper);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.6;
+    font-family:'Noto Sans Bengali','Inter',sans-serif;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  .display{ font-family:'Fraunces',serif; }
-  .bangla{ font-family:'Noto Serif Bengali',serif; }
+  .display{ font-family:'Noto Serif Bengali',serif; }
+  .latin{ font-family:'Inter',sans-serif; }
 
   .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
 
@@ -39,12 +39,10 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:28px 24px; max-width:1080px; margin:0 auto;
   }
-  .logo{ display:flex; align-items:baseline; gap:10px; }
-  .logo-en{ font-family:'Fraunces',serif; font-weight:600; font-size:22px; }
-  .logo-bn{ font-family:'Noto Serif Bengali',serif; font-size:17px; color:var(--accent); }
+  .logo{ font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:24px; }
   nav a.cta{
     font-size:14px; font-weight:600; text-decoration:none; color:var(--ink);
-    border:1.5px solid var(--ink); padding:9px 20px; border-radius:2px;
+    border:1.5px solid var(--ink); padding:9px 22px; border-radius:2px;
     transition:background .2s, color .2s;
   }
   nav a.cta:hover{ background:var(--ink); color:var(--paper); }
@@ -52,16 +50,16 @@
   /* ---------- Hero ---------- */
   header.hero{ padding:64px 24px 96px; max-width:1080px; margin:0 auto; }
   .eyebrow{
-    font-size:13px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--accent); font-weight:600; margin-bottom:20px;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin-bottom:22px;
   }
   h1{
-    font-size:clamp(38px, 6vw, 64px); font-weight:600; line-height:1.08;
-    max-width:11ch; margin-bottom:24px;
+    font-size:clamp(34px, 5.4vw, 56px); font-weight:700; line-height:1.25;
+    max-width:14ch; margin-bottom:26px;
   }
-  h1 .bn-inline{ color:var(--accent); font-style:italic; }
   .hero-sub{
-    font-size:19px; max-width:52ch; color:#3d4a41; margin-bottom:36px;
+    font-size:18px; max-width:52ch; color:#3d4a41; margin-bottom:36px;
   }
   .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
   .btn-primary{
@@ -80,30 +78,30 @@
     background:var(--ink); color:var(--paper); padding:88px 24px;
   }
   .network .inner{ max-width:1080px; margin:0 auto; }
-  .network h2{ font-size:clamp(28px,4vw,40px); font-weight:600; max-width:16ch; margin-bottom:16px; }
-  .network p.lead{ max-width:56ch; color:#c9d2cb; font-size:17px; margin-bottom:56px; }
+  .network h2{ font-size:clamp(26px,3.6vw,36px); font-weight:600; max-width:18ch; margin-bottom:18px; }
+  .network p.lead{ max-width:58ch; color:#c9d2cb; font-size:16.5px; margin-bottom:56px; }
 
   .map-placeholder{
     border:1px dashed rgba(246,243,236,.35); border-radius:4px;
     padding:48px 24px; text-align:center; color:#9fb0a5;
     font-size:14px; margin-bottom:16px;
   }
-  .map-placeholder strong{ display:block; color:var(--paper); font-size:16px; margin-bottom:6px; }
+  .map-placeholder strong{ display:block; color:var(--paper); font-size:16px; margin-bottom:6px; font-family:'Noto Serif Bengali',serif; }
 
   .divisions{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
     gap:1px; background:rgba(246,243,236,.15); border-radius:4px; overflow:hidden;
   }
   .division{ background:var(--ink); padding:18px 16px; }
-  .division .count{ font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--accent); }
-  .division .name{ font-size:13px; color:#c9d2cb; margin-top:2px; }
+  .division .count{ font-family:'Noto Serif Bengali',serif; font-size:26px; font-weight:600; color:var(--accent); }
+  .division .name{ font-size:14px; color:#c9d2cb; margin-top:4px; }
 
   /* ---------- How it works ---------- */
   section.how{ padding:96px 24px; max-width:1080px; margin:0 auto; }
-  section.how h2{ font-size:clamp(28px,4vw,40px); font-weight:600; margin-bottom:56px; max-width:14ch; }
+  section.how h2{ font-size:clamp(26px,3.6vw,36px); font-weight:600; margin-bottom:56px; }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
   .step{ border-top:2px solid var(--ink); padding-top:18px; }
-  .step .num{ font-family:'Fraunces',serif; font-size:14px; color:var(--accent); font-weight:600; margin-bottom:10px; }
+  .step .num{ font-family:'Noto Serif Bengali',serif; font-size:15px; color:var(--accent); font-weight:600; margin-bottom:10px; }
   .step h3{ font-size:17px; font-weight:600; margin-bottom:8px; }
   .step p{ font-size:14.5px; color:#3d4a41; }
 
@@ -113,14 +111,14 @@
   /* ---------- Apply / contact ---------- */
   section.apply{ background:var(--accent-soft); padding:96px 24px; }
   .apply .inner{ max-width:640px; margin:0 auto; text-align:left; }
-  section.apply h2{ font-size:clamp(26px,4vw,36px); font-weight:600; margin-bottom:12px; }
+  section.apply h2{ font-size:clamp(24px,3.6vw,32px); font-weight:600; margin-bottom:12px; }
   section.apply p{ color:#4a4033; margin-bottom:36px; font-size:16px; }
 
   form{ display:flex; flex-direction:column; gap:16px; }
-  form label{ font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+  form label{ font-size:13px; font-weight:600; }
   form input, form select, form textarea{
     padding:13px 14px; border:1.5px solid var(--ink); border-radius:2px;
-    font-family:'Inter',sans-serif; font-size:15px; background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans Bengali','Inter',sans-serif; font-size:15px; background:var(--paper); color:var(--ink);
   }
   form button{
     margin-top:8px; background:var(--ink); color:var(--paper); border:none;
@@ -135,109 +133,106 @@
     max-width:1080px; margin:0 auto; display:flex; justify-content:space-between;
     align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid var(--line); padding-top:32px;
   }
-  footer .logo-bn{ font-size:15px; }
+  footer .logo{ font-size:16px; }
   footer p{ font-size:13px; color:#6b6252; }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">
-    <span class="logo-en display">Somonnoi</span>
-    <span class="logo-bn bangla">সমন্বয়</span>
-  </div>
-  <a class="cta" href="#apply">Partner With Us</a>
+  <span class="logo display">সমন্বয়</span>
+  <a class="cta" href="#apply">পার্টনার হোন</a>
 </nav>
 
 <header class="hero">
-  <div class="eyebrow">Coaching, connected — not owned</div>
-  <h1 class="display">Every district deserves a <span class="bn-inline">ভালো</span> teacher, close to home</h1>
-  <p class="hero-sub">Somonnoi partners with trusted local coaching teachers across Bangladesh — bringing a national brand, training, materials, and online reach to classrooms in the districts, without asking a single student to travel to Dhaka.</p>
+  <div class="eyebrow latin">Education Network</div>
+  <h1 class="display">প্রতিটি জেলার প্রাপ্য একজন ভালো শিক্ষক, বাড়ির কাছেই</h1>
+  <p class="hero-sub">সমন্বয় যুক্ত হয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে — জেলার ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার, শিক্ষার্থীদের ঢাকায় যাওয়ার প্রয়োজন ছাড়াই।</p>
   <div class="hero-actions">
-    <a class="btn-primary" href="#apply">Become a Partner</a>
-    <a class="btn-ghost" href="#how">How it works ↓</a>
+    <a class="btn-primary" href="#apply">পার্টনার হোন</a>
+    <a class="btn-ghost" href="#how">কীভাবে কাজ করে ↓</a>
   </div>
 </header>
 
 <section class="network">
   <div class="inner">
-    <h2 class="display">One brand. Every district, its own trusted teacher.</h2>
-    <p class="lead">Somonnoi's network grows one partner center at a time — each one an existing, respected local teacher, now backed by a national identity.</p>
+    <h2 class="display">এক ব্র্যান্ড। প্রতিটি জেলায় নিজস্ব বিশ্বস্ত শিক্ষক।</h2>
+    <p class="lead">সমন্বয়ের নেটওয়ার্ক গড়ে ওঠে একটি একটি করে পার্টনার সেন্টার নিয়ে — প্রতিটি একজন প্রতিষ্ঠিত, শ্রদ্ধেয় স্থানীয় শিক্ষক, এখন যুক্ত জাতীয় পরিচিতির সাথে।</p>
 
     <div class="map-placeholder">
-      <strong>[ Bangladesh network map — placeholder ]</strong>
-      Interactive map with partner-center pins goes here.<br>
-      To be built by the developer using Leaflet.js once the pilot centers are confirmed.
+      <strong>[ বাংলাদেশ নেটওয়ার্ক ম্যাপ — placeholder ]</strong>
+      নির্বাচিত পার্টনার কেন্দ্রের অবস্থান দেখানো ইন্টারেক্টিভ ম্যাপ এখানে বসবে।<br>
+      পাইলট সেন্টার নিশ্চিত হলে ডেভেলপার Leaflet.js দিয়ে এটি তৈরি করবে।
     </div>
 
     <div class="divisions">
-      <div class="division"><div class="count">—</div><div class="name">Rajshahi</div></div>
-      <div class="division"><div class="count">—</div><div class="name">Rangpur</div></div>
-      <div class="division"><div class="count">—</div><div class="name">Khulna</div></div>
-      <div class="division"><div class="count">—</div><div class="name">Dhaka</div></div>
-      <div class="division"><div class="count">—</div><div class="name">Chattogram</div></div>
-      <div class="division"><div class="count">—</div><div class="name">Sylhet</div></div>
+      <div class="division"><div class="count">—</div><div class="name">রাজশাহী</div></div>
+      <div class="division"><div class="count">—</div><div class="name">রংপুর</div></div>
+      <div class="division"><div class="count">—</div><div class="name">খুলনা</div></div>
+      <div class="division"><div class="count">—</div><div class="name">ঢাকা</div></div>
+      <div class="division"><div class="count">—</div><div class="name">চট্টগ্রাম</div></div>
+      <div class="division"><div class="count">—</div><div class="name">সিলেট</div></div>
     </div>
   </div>
 </section>
 
 <section class="how" id="how">
-  <h2 class="display">How a partnership works</h2>
+  <h2 class="display">যেভাবে কাজ করে</h2>
   <div class="steps">
     <div class="step">
-      <div class="num">01</div>
-      <h3>You apply</h3>
-      <p>Tell us about your coaching, your students, and your area. We verify every partner personally before onboarding.</p>
+      <div class="num">০১</div>
+      <h3>আপনি আবেদন করুন</h3>
+      <p>আপনার কোচিং, শিক্ষার্থী ও এলাকা সম্পর্কে আমাদের জানান। আমরা প্রতিটি পার্টনারকে ব্যক্তিগতভাবে যাচাই করি।</p>
     </div>
     <div class="step">
-      <div class="num">02</div>
-      <h3>We onboard</h3>
-      <p>Brand signage, teacher training, printed materials, and your center goes live on the Somonnoi network.</p>
+      <div class="num">০২</div>
+      <h3>আমরা যুক্ত করি</h3>
+      <p>ব্র্যান্ড সাইনেজ, শিক্ষক প্রশিক্ষণ, ছাপা উপকরণ — আপনার সেন্টার সমন্বয় নেটওয়ার্কে চালু হয়ে যায়।</p>
     </div>
     <div class="step">
-      <div class="num">03</div>
-      <h3>We promote</h3>
-      <p>Online marketing, national visibility, and a place on the leaderboard — students find you.</p>
+      <div class="num">০৩</div>
+      <h3>আমরা প্রচার করি</h3>
+      <p>অনলাইন প্রচার, জাতীয় দৃশ্যমানতা এবং লিডারবোর্ডে স্থান — শিক্ষার্থীরা আপনাকে খুঁজে পায়।</p>
     </div>
     <div class="step">
-      <div class="num">04</div>
-      <h3>You grow</h3>
-      <p>You keep teaching and keep your students' fees. One flat monthly fee — no commissions, no surprises.</p>
+      <div class="num">০৪</div>
+      <h3>আপনি এগিয়ে যান</h3>
+      <p>আপনি পড়ানো চালিয়ে যান, শিক্ষার্থীদের ফি আপনারই থাকে। একটাই মাসিক ফি — কোনো কমিশন নেই।</p>
     </div>
   </div>
 </section>
 
 <section class="apply" id="apply">
   <div class="inner">
-    <h2 class="display">Partner with Somonnoi</h2>
-    <p>Tell us about your coaching center. We'll be in touch within a few days.</p>
+    <h2 class="display">সমন্বয়ের সাথে পার্টনার হোন</h2>
+    <p>আপনার কোচিং সেন্টার সম্পর্কে আমাদের জানান। আমরা কয়েক দিনের মধ্যে যোগাযোগ করব।</p>
     <form action="mailto:REPLACE_WITH_YOUR_EMAIL@example.com" method="post" enctype="text/plain">
       <div>
-        <label for="name">Your name</label>
+        <label for="name">আপনার নাম</label>
         <input id="name" name="name" type="text" required>
       </div>
       <div>
-        <label for="area">District / area</label>
+        <label for="area">জেলা / এলাকা</label>
         <input id="area" name="area" type="text" required>
       </div>
       <div>
-        <label for="phone">Phone / WhatsApp</label>
+        <label for="phone">ফোন / হোয়াটসঅ্যাপ</label>
         <input id="phone" name="phone" type="tel" required>
       </div>
       <div>
-        <label for="students">Current students (approx.)</label>
+        <label for="students">বর্তমান শিক্ষার্থী সংখ্যা (আনুমানিক)</label>
         <input id="students" name="students" type="text">
       </div>
-      <button type="submit">Submit Application</button>
+      <button type="submit">আবেদন জমা দিন</button>
     </form>
-    <p class="form-note">This form currently opens the visitor's email app (temporary, for launch). A real backend form comes with the full platform build.</p>
+    <p class="form-note">এই ফর্মটি এখন দর্শকের ইমেইল অ্যাপ খুলবে (সাময়িক, লঞ্চের জন্য)। সম্পূর্ণ প্ল্যাটফর্মের সাথে একটি প্রকৃত ব্যাকএন্ড ফর্ম আসবে।</p>
   </div>
 </section>
 
 <footer>
   <div class="inner">
-    <span class="logo-bn bangla">সমন্বয় — Somonnoi</span>
-    <p>&copy; 2026 Somonnoi. All rights reserved.</p>
+    <span class="logo display">সমন্বয়</span>
+    <p>&copy; ২০২৬ সমন্বয়। সর্বস্বত্ব সংরক্ষিত।</p>
   </div>
 </footer>
 
