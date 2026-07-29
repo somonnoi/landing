@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>পার্টনার লগইন — সমন্বয়</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2e26; --paper:#f6f3ec; --accent:#c8862c;
+    --accent-soft:#e8d9b8; --line:#d8d2c4; --muted:#6b6252;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans Bengali','Inter',sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:24px;
+  }
+  .card{
+    width:100%; max-width:420px; background:#fff; border:1px solid var(--line);
+    border-radius:8px; padding:44px 36px;
+  }
+  .logo{ font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:26px; text-align:center; margin-bottom:6px; }
+  .badge{
+    display:block; text-align:center; font-family:'Inter',sans-serif; font-size:11px;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:34px;
+  }
+  h1{ font-family:'Noto Serif Bengali',serif; font-size:21px; font-weight:600; text-align:center; margin-bottom:6px; }
+  .sub{ text-align:center; color:var(--muted); font-size:14px; margin-bottom:30px; }
+  label{ font-size:13px; font-weight:600; display:block; margin-bottom:6px; }
+  .field{ margin-bottom:18px; }
+  input{
+    width:100%; padding:12px 14px; border:1.5px solid var(--line); border-radius:5px;
+    font-family:'Noto Sans Bengali','Inter',sans-serif; font-size:15px; background:var(--paper);
+  }
+  input:focus{ outline:none; border-color:var(--ink); }
+  .btn{
+    display:block; width:100%; text-align:center; background:var(--ink); color:var(--paper);
+    border:none; padding:14px; border-radius:5px; font-weight:600; font-size:15px;
+    text-decoration:none; margin-top:8px; cursor:pointer;
+  }
+  .forgot{ display:block; text-align:center; margin-top:16px; font-size:13px; color:var(--muted); text-decoration:none; }
+  .demo-note{
+    margin-top:32px; padding:14px; background:var(--accent-soft); border-radius:5px;
+    font-size:12px; color:#4a4033; text-align:center; line-height:1.6;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">সমন্বয়</div>
+    <span class="badge">Partner Portal</span>
+    <h1>পার্টনার লগইন</h1>
+    <p class="sub">আপনার সেন্টার ড্যাশবোর্ডে প্রবেশ করুন</p>
+
+    <div class="field">
+      <label for="email">ইমেইল</label>
+      <input id="email" type="email" placeholder="you@example.com">
+    </div>
+    <div class="field">
+      <label for="pass">পাসওয়ার্ড</label>
+      <input id="pass" type="password" placeholder="••••••••">
+    </div>
+
+    <a class="btn" href="dashboard.html">লগইন করুন (ডেমো দেখুন)</a>
+    <a class="forgot" href="#">পাসওয়ার্ড ভুলে গেছেন?</a>
+
+    <div class="demo-note">
+      এটি একটি ক্লিকযোগ্য প্রোটোটাইপ — কোনো প্রকৃত লগইন যাচাই এখানে নেই। বাটনে ক্লিক করলেই ড্যাশবোর্ড প্রিভিউ দেখা যাবে।
+    </div>
+  </div>
+</body>
+</html>

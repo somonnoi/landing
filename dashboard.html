@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ড্যাশবোর্ড — সমন্বয়</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2e26; --paper:#f6f3ec; --accent:#c8862c;
+    --accent-soft:#e8d9b8; --line:#d8d2c4; --muted:#6b6252; --white:#ffffff;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans Bengali','Inter',sans-serif;
+  }
+  .display{ font-family:'Noto Serif Bengali',serif; }
+
+  /* ---- top bar ---- */
+  .topbar{
+    background:var(--ink); color:var(--paper); padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  .topbar .logo{ font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:20px; }
+  .topbar .who{ display:flex; align-items:center; gap:14px; font-size:14px; }
+  .topbar .who .center-name{ color:#c9d2cb; }
+  .topbar a.logout{ color:var(--accent); text-decoration:none; font-weight:600; font-size:13px; }
+
+  .demo-banner{
+    background:var(--accent-soft); color:#4a4033; text-align:center; font-size:12.5px;
+    padding:9px 16px;
+  }
+
+  .wrap{ max-width:1100px; margin:0 auto; padding:32px 24px 80px; }
+
+  h1.page-title{ font-size:24px; font-weight:600; margin-bottom:4px; }
+  .greet{ color:var(--muted); font-size:14.5px; margin-bottom:32px; }
+
+  /* ---- stat cards ---- */
+  .stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:44px; }
+  .stat{ background:var(--white); border:1px solid var(--line); border-radius:8px; padding:20px 22px; }
+  .stat .label{ font-size:12.5px; color:var(--muted); font-weight:600; margin-bottom:8px; }
+  .stat .value{ font-family:'Noto Serif Bengali',serif; font-size:28px; font-weight:600; }
+  .stat .value.accent{ color:var(--accent); }
+  .stat .note{ font-size:12px; color:var(--muted); margin-top:4px; }
+  .pill{
+    display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px;
+    margin-top:6px;
+  }
+  .pill.ok{ background:#dcebe0; color:#20623a; }
+  .pill.due{ background:#f5ddc8; color:#8a4a12; }
+
+  /* ---- section ---- */
+  section{ margin-bottom:44px; }
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px; }
+  .section-head h2{ font-size:18px; font-weight:600; }
+  .section-head .sub{ font-size:12.5px; color:var(--muted); }
+
+  /* ---- downloads ---- */
+  .downloads{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .dl-card{
+    background:var(--white); border:1px solid var(--line); border-radius:8px; padding:16px 18px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .dl-info .name{ font-weight:600; font-size:14px; margin-bottom:2px; }
+  .dl-info .meta{ font-size:11.5px; color:var(--muted); }
+  .dl-btn{
+    background:var(--ink); color:var(--paper); border:none; padding:8px 14px; border-radius:5px;
+    font-size:12.5px; font-weight:600; text-decoration:none; white-space:nowrap;
+  }
+
+  /* ---- announcements ---- */
+  .announce{ background:var(--white); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .announce-item{ padding:16px 20px; border-bottom:1px solid var(--line); }
+  .announce-item:last-child{ border-bottom:none; }
+  .announce-item .date{ font-size:11.5px; color:var(--accent); font-weight:600; margin-bottom:4px; }
+  .announce-item .title{ font-weight:600; font-size:14.5px; margin-bottom:3px; }
+  .announce-item .body{ font-size:13px; color:var(--muted); }
+
+  /* ---- leaderboard ---- */
+  .leaderboard{ background:var(--ink); color:var(--paper); border-radius:8px; padding:22px 24px; }
+  .lb-row{
+    display:flex; align-items:center; justify-content:space-between; padding:9px 0;
+    border-bottom:1px solid rgba(246,243,236,.12); font-size:13.5px;
+  }
+  .lb-row:last-child{ border-bottom:none; }
+  .lb-row.me{ color:var(--accent); font-weight:700; }
+  .lb-rank{ width:28px; }
+
+  /* ---- quick actions ---- */
+  .actions{ display:flex; gap:12px; flex-wrap:wrap; }
+  .action-btn{
+    background:var(--white); border:1px solid var(--line); border-radius:8px; padding:14px 18px;
+    font-size:13.5px; font-weight:600; text-decoration:none; color:var(--ink); flex:1; min-width:180px;
+    text-align:center;
+  }
+  .action-btn:hover{ border-color:var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">এটি একটি ক্লিকযোগ্য প্রোটোটাইপ — নমুনা তথ্য দেখানো হচ্ছে, প্রকৃত ডেটা নয়</div>
+
+<div class="topbar">
+  <span class="logo">সমন্বয়</span>
+  <div class="who">
+    <span>রহিম উদ্দিন <span class="center-name">· উদয়ন কোচিং সেন্টার, রাজশাহী</span></span>
+    <a class="logout" href="login.html">লগআউট</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <h1 class="page-title display">স্বাগতম, রহিম উদ্দিন</h1>
+  <p class="greet">আপনার সেন্টারের সারসংক্ষেপ — জুলাই ২০২৬</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="label">এই মাসের শিক্ষার্থী</div>
+      <div class="value">১৪২</div>
+      <div class="note">গত মাসের চেয়ে ↑ ১২ জন বেশি</div>
+    </div>
+    <div class="stat">
+      <div class="label">সাবস্ক্রিপশন স্ট্যাটাস</div>
+      <div class="value accent">৳ ১৫,০০০</div>
+      <span class="pill due">২ আগস্ট পরিশোধ্য</span>
+    </div>
+    <div class="stat">
+      <div class="label">নেটওয়ার্ক র‍্যাংক</div>
+      <div class="value">#৩</div>
+      <div class="note">রাজশাহী বিভাগে</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <h2>দ্রুত পদক্ষেপ</h2>
+    </div>
+    <div class="actions">
+      <a class="action-btn" href="#">নতুন উপকরণ অর্ডার করুন</a>
+      <a class="action-btn" href="#">সেন্টার প্রোফাইল সম্পাদনা</a>
+      <a class="action-btn" href="#">HQ-এর সাথে যোগাযোগ (WhatsApp)</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>ডাউনলোড সেন্টার</h2>
+      <span class="sub">প্রশিক্ষণ ও ব্র্যান্ড উপকরণ</span>
+    </div>
+    <div class="downloads">
+      <div class="dl-card">
+        <div class="dl-info">
+          <div class="name">প্রশিক্ষণ ম্যানুয়াল</div>
+          <div class="meta">PDF · ৪.২ MB</div>
+        </div>
+        <a class="dl-btn" href="#">ডাউনলোড</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-info">
+          <div class="name">ব্র্যান্ড গাইডলাইন</div>
+          <div class="meta">PDF · ২.৮ MB</div>
+        </div>
+        <a class="dl-btn" href="#">ডাউনলোড</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-info">
+          <div class="name">মার্কেটিং টেমপ্লেট</div>
+          <div class="meta">ZIP · ১২ MB</div>
+        </div>
+        <a class="dl-btn" href="#">ডাউনলোড</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-info">
+          <div class="name">সাইনেজ ডিজাইন ফাইল</div>
+          <div class="meta">PDF · ৬.১ MB</div>
+        </div>
+        <a class="dl-btn" href="#">ডাউনলোড</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>HQ থেকে ঘোষণা</h2>
+    </div>
+    <div class="announce">
+      <div class="announce-item">
+        <div class="date">২৫ জুলাই, ২০২৬</div>
+        <div class="title">নতুন মডেল টেস্ট সিস্টেম শীঘ্রই আসছে</div>
+        <div class="body">আগস্টের মধ্যে সব পার্টনার সেন্টারে কেন্দ্রীয় মডেল টেস্ট চালু হবে।</div>
+      </div>
+      <div class="announce-item">
+        <div class="date">১৮ জুলাই, ২০২৬</div>
+        <div class="title">আগস্টের বই সরবরাহ সময়সূচী প্রকাশিত</div>
+        <div class="body">আপনার এলাকার ডেলিভারি তারিখ জানতে ডাউনলোড সেন্টার দেখুন।</div>
+      </div>
+      <div class="announce-item">
+        <div class="date">৫ জুলাই, ২০২৬</div>
+        <div class="title">লিডারবোর্ড আপডেট</div>
+        <div class="body">রাজশাহী বিভাগে এই মাসে ৩টি নতুন পার্টনার সেন্টার যুক্ত হয়েছে।</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>রাজশাহী বিভাগ লিডারবোর্ড</h2>
+      <span class="sub">এই মাসের শিক্ষার্থী সংখ্যা অনুযায়ী</span>
+    </div>
+    <div class="leaderboard">
+      <div class="lb-row"><span><span class="lb-rank">১.</span> আদর্শ কোচিং সেন্টার</span><span>২১০ শিক্ষার্থী</span></div>
+      <div class="lb-row"><span><span class="lb-rank">২.</span> বিদ্যাপীঠ একাডেমি</span><span>১৬৫ শিক্ষার্থী</span></div>
+      <div class="lb-row me"><span><span class="lb-rank">৩.</span> উদয়ন কোচিং সেন্টার (আপনি)</span><span>১৪২ শিক্ষার্থী</span></div>
+      <div class="lb-row"><span><span class="lb-rank">৪.</span> প্রত্যাশা কোচিং</span><span>১০৮ শিক্ষার্থী</span></div>
+      <div class="lb-row"><span><span class="lb-rank">৫.</span> সাফল্য কেন্দ্র</span><span>৯৭ শিক্ষার্থী</span></div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
