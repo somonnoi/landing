@@ -3,47 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>সমন্বয় | Education Network — শিক্ষক, বাড়ির কাছেই</title>
-<meta name="description" content="সমন্বয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে যুক্ত হয়, প্রতিটি ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার।">
+<title id="pageTitle">সমন্বয় | Education Network — শিক্ষক, বাড়ির কাছেই</title>
+<meta id="pageDesc" name="description" content="সমন্বয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে যুক্ত হয়, প্রতিটি ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  /* ============================================================
-     PLACEHOLDER PALETTE — swap these five values once Joy
-     delivers the real brand guideline. Nothing else needs to change.
-     ============================================================ */
   :root{
-    --ink:        #1f2e26;   /* deep forest — primary text & dark surfaces */
-    --paper:      #f6f3ec;   /* warm off-white — page background */
-    --accent:     #c8862c;   /* warm mustard-gold — CTAs, highlights */
-    --accent-soft:#e8d9b8;   /* pale gold — subtle fills, borders */
-    --line:       #d8d2c4;   /* hairline dividers */
+    --ink:#1f2e26; --paper:#f6f3ec; --accent:#c8862c;
+    --accent-soft:#e8d9b8; --line:#d8d2c4;
   }
-
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
   body{
-    background:var(--paper);
-    color:var(--ink);
+    background:var(--paper); color:var(--ink);
     font-family:'Noto Sans Bengali','Inter',sans-serif;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
   }
   .display{ font-family:'Noto Serif Bengali',serif; }
   .latin{ font-family:'Inter',sans-serif; }
-
   .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
 
   /* ---------- Nav ---------- */
   nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:28px 24px; max-width:1080px; margin:0 auto;
+    padding:28px 24px; max-width:1080px; margin:0 auto; gap:16px; flex-wrap:wrap;
   }
   .logo{ font-family:'Noto Serif Bengali',serif; font-weight:700; font-size:24px; }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+
+  .lang-switch{
+    display:flex; border:1.5px solid var(--ink); border-radius:20px; overflow:hidden; font-size:13px;
+  }
+  .lang-switch button{
+    border:none; background:transparent; padding:7px 14px; cursor:pointer; font-weight:600;
+    color:var(--ink); font-family:'Inter',sans-serif;
+  }
+  .lang-switch button.active{ background:var(--ink); color:var(--paper); }
+
   nav a.cta{
     font-size:14px; font-weight:600; text-decoration:none; color:var(--ink);
     border:1.5px solid var(--ink); padding:9px 22px; border-radius:2px;
-    transition:background .2s, color .2s;
+    transition:background .2s, color .2s; white-space:nowrap;
   }
   nav a.cta:hover{ background:var(--ink); color:var(--paper); }
 
@@ -56,11 +56,9 @@
   }
   h1{
     font-size:clamp(34px, 5.4vw, 56px); font-weight:700; line-height:1.25;
-    max-width:14ch; margin-bottom:26px;
+    max-width:15ch; margin-bottom:26px;
   }
-  .hero-sub{
-    font-size:18px; max-width:52ch; color:#3d4a41; margin-bottom:36px;
-  }
+  .hero-sub{ font-size:18px; max-width:52ch; color:#3d4a41; margin-bottom:36px; }
   .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
   .btn-primary{
     background:var(--ink); color:var(--paper); text-decoration:none;
@@ -74,17 +72,14 @@
   }
 
   /* ---------- Map / signature section ---------- */
-  section.network{
-    background:var(--ink); color:var(--paper); padding:88px 24px;
-  }
+  section.network{ background:var(--ink); color:var(--paper); padding:88px 24px; }
   .network .inner{ max-width:1080px; margin:0 auto; }
-  .network h2{ font-size:clamp(26px,3.6vw,36px); font-weight:600; max-width:18ch; margin-bottom:18px; }
+  .network h2{ font-size:clamp(26px,3.6vw,36px); font-weight:600; max-width:20ch; margin-bottom:18px; }
   .network p.lead{ max-width:58ch; color:#c9d2cb; font-size:16.5px; margin-bottom:56px; }
 
   .map-placeholder{
     border:1px dashed rgba(246,243,236,.35); border-radius:4px;
-    padding:48px 24px; text-align:center; color:#9fb0a5;
-    font-size:14px; margin-bottom:16px;
+    padding:48px 24px; text-align:center; color:#9fb0a5; font-size:14px; margin-bottom:16px;
   }
   .map-placeholder strong{ display:block; color:var(--paper); font-size:16px; margin-bottom:6px; font-family:'Noto Serif Bengali',serif; }
 
@@ -104,7 +99,6 @@
   .step .num{ font-family:'Noto Serif Bengali',serif; font-size:15px; color:var(--accent); font-weight:600; margin-bottom:10px; }
   .step h3{ font-size:17px; font-weight:600; margin-bottom:8px; }
   .step p{ font-size:14.5px; color:#3d4a41; }
-
   @media (max-width: 800px){ .steps{ grid-template-columns:1fr 1fr; } }
   @media (max-width: 520px){ .steps{ grid-template-columns:1fr; } }
 
@@ -113,17 +107,15 @@
   .apply .inner{ max-width:640px; margin:0 auto; text-align:left; }
   section.apply h2{ font-size:clamp(24px,3.6vw,32px); font-weight:600; margin-bottom:12px; }
   section.apply p{ color:#4a4033; margin-bottom:36px; font-size:16px; }
-
   form{ display:flex; flex-direction:column; gap:16px; }
   form label{ font-size:13px; font-weight:600; }
-  form input, form select, form textarea{
+  form input{
     padding:13px 14px; border:1.5px solid var(--ink); border-radius:2px;
     font-family:'Noto Sans Bengali','Inter',sans-serif; font-size:15px; background:var(--paper); color:var(--ink);
   }
   form button{
     margin-top:8px; background:var(--ink); color:var(--paper); border:none;
-    padding:15px 24px; font-weight:600; font-size:15px; border-radius:2px;
-    cursor:pointer; align-self:flex-start;
+    padding:15px 24px; font-weight:600; font-size:15px; border-radius:2px; cursor:pointer; align-self:flex-start;
   }
   .form-note{ font-size:12.5px; color:#6b6252; margin-top:14px; }
 
@@ -141,100 +133,168 @@
 
 <nav>
   <span class="logo display">সমন্বয়</span>
-  <a class="cta" href="#apply">পার্টনার হোন</a>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button id="btnBn" onclick="setLang('bn')">বাং</button>
+      <button id="btnEn" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="cta" id="navCta" href="#apply">পার্টনার হোন</a>
+  </div>
 </nav>
 
 <header class="hero">
   <div class="eyebrow latin">Education Network</div>
-  <h1 class="display">প্রতিটি জেলার প্রাপ্য একজন ভালো শিক্ষক, বাড়ির কাছেই</h1>
-  <p class="hero-sub">সমন্বয় যুক্ত হয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে — জেলার ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার, শিক্ষার্থীদের ঢাকায় যাওয়ার প্রয়োজন ছাড়াই।</p>
+  <h1 id="headline">প্রতিটি জেলার প্রাপ্য একজন ভালো শিক্ষক, বাড়ির কাছেই</h1>
+  <p class="hero-sub" id="heroSub">সমন্বয় যুক্ত হয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে — জেলার ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার, শিক্ষার্থীদের ঢাকায় যাওয়ার প্রয়োজন ছাড়াই।</p>
   <div class="hero-actions">
-    <a class="btn-primary" href="#apply">পার্টনার হোন</a>
-    <a class="btn-ghost" href="#how">কীভাবে কাজ করে ↓</a>
+    <a class="btn-primary" id="heroPrimary" href="#apply">পার্টনার হোন</a>
+    <a class="btn-ghost" id="heroSecondary" href="#how">কীভাবে কাজ করে ↓</a>
   </div>
 </header>
 
 <section class="network">
   <div class="inner">
-    <h2 class="display">এক ব্র্যান্ড। প্রতিটি জেলায় নিজস্ব বিশ্বস্ত শিক্ষক।</h2>
-    <p class="lead">সমন্বয়ের নেটওয়ার্ক গড়ে ওঠে একটি একটি করে পার্টনার সেন্টার নিয়ে — প্রতিটি একজন প্রতিষ্ঠিত, শ্রদ্ধেয় স্থানীয় শিক্ষক, এখন যুক্ত জাতীয় পরিচিতির সাথে।</p>
+    <h2 class="display" id="networkH2">এক ব্র্যান্ড। প্রতিটি জেলায় নিজস্ব বিশ্বস্ত শিক্ষক।</h2>
+    <p class="lead" id="networkLead">সমন্বয়ের নেটওয়ার্ক গড়ে ওঠে একটি একটি করে পার্টনার সেন্টার নিয়ে — প্রতিটি একজন প্রতিষ্ঠিত, শ্রদ্ধেয় স্থানীয় শিক্ষক, এখন যুক্ত জাতীয় পরিচিতির সাথে।</p>
 
     <div class="map-placeholder">
-      <strong>[ বাংলাদেশ নেটওয়ার্ক ম্যাপ — placeholder ]</strong>
-      নির্বাচিত পার্টনার কেন্দ্রের অবস্থান দেখানো ইন্টারেক্টিভ ম্যাপ এখানে বসবে।<br>
-      পাইলট সেন্টার নিশ্চিত হলে ডেভেলপার Leaflet.js দিয়ে এটি তৈরি করবে।
+      <strong id="mapLabel">[ বাংলাদেশ নেটওয়ার্ক ম্যাপ — placeholder ]</strong>
+      <span id="mapNote1">নির্বাচিত পার্টনার কেন্দ্রের অবস্থান দেখানো ইন্টারেক্টিভ ম্যাপ এখানে বসবে।</span><br>
+      <span id="mapNote2">পাইলট সেন্টার নিশ্চিত হলে ডেভেলপার Leaflet.js দিয়ে এটি তৈরি করবে।</span>
     </div>
 
     <div class="divisions">
-      <div class="division"><div class="count">—</div><div class="name">রাজশাহী</div></div>
-      <div class="division"><div class="count">—</div><div class="name">রংপুর</div></div>
-      <div class="division"><div class="count">—</div><div class="name">খুলনা</div></div>
-      <div class="division"><div class="count">—</div><div class="name">ঢাকা</div></div>
-      <div class="division"><div class="count">—</div><div class="name">চট্টগ্রাম</div></div>
-      <div class="division"><div class="count">—</div><div class="name">সিলেট</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="0">রাজশাহী</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="1">রংপুর</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="2">খুলনা</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="3">ঢাকা</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="4">চট্টগ্রাম</div></div>
+      <div class="division"><div class="count">—</div><div class="name" data-div="5">সিলেট</div></div>
     </div>
   </div>
 </section>
 
 <section class="how" id="how">
-  <h2 class="display">যেভাবে কাজ করে</h2>
+  <h2 class="display" id="howH2">যেভাবে কাজ করে</h2>
   <div class="steps">
     <div class="step">
-      <div class="num">০১</div>
-      <h3>আপনি আবেদন করুন</h3>
-      <p>আপনার কোচিং, শিক্ষার্থী ও এলাকা সম্পর্কে আমাদের জানান। আমরা প্রতিটি পার্টনারকে ব্যক্তিগতভাবে যাচাই করি।</p>
+      <div class="num" id="stepNum0">০১</div>
+      <h3 id="stepTitle0">আপনি আবেদন করুন</h3>
+      <p id="stepDesc0">আপনার কোচিং, শিক্ষার্থী ও এলাকা সম্পর্কে আমাদের জানান। আমরা প্রতিটি পার্টনারকে ব্যক্তিগতভাবে যাচাই করি।</p>
     </div>
     <div class="step">
-      <div class="num">০২</div>
-      <h3>আমরা যুক্ত করি</h3>
-      <p>ব্র্যান্ড সাইনেজ, শিক্ষক প্রশিক্ষণ, ছাপা উপকরণ — আপনার সেন্টার সমন্বয় নেটওয়ার্কে চালু হয়ে যায়।</p>
+      <div class="num" id="stepNum1">০২</div>
+      <h3 id="stepTitle1">আমরা যুক্ত করি</h3>
+      <p id="stepDesc1">ব্র্যান্ড সাইনেজ, শিক্ষক প্রশিক্ষণ, ছাপা উপকরণ — আপনার সেন্টার সমন্বয় নেটওয়ার্কে চালু হয়ে যায়।</p>
     </div>
     <div class="step">
-      <div class="num">০৩</div>
-      <h3>আমরা প্রচার করি</h3>
-      <p>অনলাইন প্রচার, জাতীয় দৃশ্যমানতা এবং লিডারবোর্ডে স্থান — শিক্ষার্থীরা আপনাকে খুঁজে পায়।</p>
+      <div class="num" id="stepNum2">০৩</div>
+      <h3 id="stepTitle2">আমরা প্রচার করি</h3>
+      <p id="stepDesc2">অনলাইন প্রচার, জাতীয় দৃশ্যমানতা এবং লিডারবোর্ডে স্থান — শিক্ষার্থীরা আপনাকে খুঁজে পায়।</p>
     </div>
     <div class="step">
-      <div class="num">০৪</div>
-      <h3>আপনি এগিয়ে যান</h3>
-      <p>আপনি পড়ানো চালিয়ে যান, শিক্ষার্থীদের ফি আপনারই থাকে। একটাই মাসিক ফি — কোনো কমিশন নেই।</p>
+      <div class="num" id="stepNum3">০৪</div>
+      <h3 id="stepTitle3">আপনি এগিয়ে যান</h3>
+      <p id="stepDesc3">আপনি পড়ানো চালিয়ে যান, শিক্ষার্থীদের ফি আপনারই থাকে। একটাই মাসিক ফি — কোনো কমিশন নেই।</p>
     </div>
   </div>
 </section>
 
 <section class="apply" id="apply">
   <div class="inner">
-    <h2 class="display">সমন্বয়ের সাথে পার্টনার হোন</h2>
-    <p>আপনার কোচিং সেন্টার সম্পর্কে আমাদের জানান। আমরা কয়েক দিনের মধ্যে যোগাযোগ করব।</p>
+    <h2 class="display" id="applyH2">সমন্বয়ের সাথে পার্টনার হোন</h2>
+    <p id="applyLead">আপনার কোচিং সেন্টার সম্পর্কে আমাদের জানান। আমরা কয়েক দিনের মধ্যে যোগাযোগ করব।</p>
     <form action="mailto:REPLACE_WITH_YOUR_EMAIL@example.com" method="post" enctype="text/plain">
       <div>
-        <label for="name">আপনার নাম</label>
+        <label for="name" id="labelName">আপনার নাম</label>
         <input id="name" name="name" type="text" required>
       </div>
       <div>
-        <label for="area">জেলা / এলাকা</label>
+        <label for="area" id="labelArea">জেলা / এলাকা</label>
         <input id="area" name="area" type="text" required>
       </div>
       <div>
-        <label for="phone">ফোন / হোয়াটসঅ্যাপ</label>
+        <label for="phone" id="labelPhone">ফোন / হোয়াটসঅ্যাপ</label>
         <input id="phone" name="phone" type="tel" required>
       </div>
       <div>
-        <label for="students">বর্তমান শিক্ষার্থী সংখ্যা (আনুমানিক)</label>
+        <label for="students" id="labelStudents">বর্তমান শিক্ষার্থী সংখ্যা (আনুমানিক)</label>
         <input id="students" name="students" type="text">
       </div>
-      <button type="submit">আবেদন জমা দিন</button>
+      <button type="submit" id="submitBtn">আবেদন জমা দিন</button>
     </form>
-    <p class="form-note">এই ফর্মটি এখন দর্শকের ইমেইল অ্যাপ খুলবে (সাময়িক, লঞ্চের জন্য)। সম্পূর্ণ প্ল্যাটফর্মের সাথে একটি প্রকৃত ব্যাকএন্ড ফর্ম আসবে।</p>
+    <p class="form-note" id="formNote">এই ফর্মটি এখন দর্শকের ইমেইল অ্যাপ খুলবে (সাময়িক, লঞ্চের জন্য)। সম্পূর্ণ প্ল্যাটফর্মের সাথে একটি প্রকৃত ব্যাকএন্ড ফর্ম আসবে।</p>
   </div>
 </section>
 
 <footer>
   <div class="inner">
     <span class="logo display">সমন্বয়</span>
-    <p>&copy; ২০২৬ সমন্বয়। সর্বস্বত্ব সংরক্ষিত।</p>
+    <p id="footerCopy">&copy; ২০২৬ সমন্বয়। সর্বস্বত্ব সংরক্ষিত।</p>
   </div>
 </footer>
+
+<script>
+  var T = {
+    navCta:    { bn: "পার্টনার হোন", en: "Partner With Us" },
+    headline:  { bn: "প্রতিটি জেলার প্রাপ্য একজন ভালো শিক্ষক, বাড়ির কাছেই", en: "Every district deserves a good teacher, close to home" },
+    heroSub:   { bn: "সমন্বয় যুক্ত হয় বাংলাদেশের বিশ্বস্ত স্থানীয় কোচিং শিক্ষকদের সাথে — জেলার ক্লাসরুমে নিয়ে আসে জাতীয় ব্র্যান্ড, প্রশিক্ষণ, উপকরণ ও অনলাইন প্রচার, শিক্ষার্থীদের ঢাকায় যাওয়ার প্রয়োজন ছাড়াই।",
+                 en: "Somonnoi partners with trusted local coaching teachers across Bangladesh — bringing a national brand, training, materials, and online reach to classrooms in the districts, without students needing to travel to Dhaka." },
+    heroPrimary:   { bn: "পার্টনার হোন", en: "Become a Partner" },
+    heroSecondary: { bn: "কীভাবে কাজ করে ↓", en: "How it works ↓" },
+    networkH2:   { bn: "এক ব্র্যান্ড। প্রতিটি জেলায় নিজস্ব বিশ্বস্ত শিক্ষক।", en: "One brand. Every district, its own trusted teacher." },
+    networkLead: { bn: "সমন্বয়ের নেটওয়ার্ক গড়ে ওঠে একটি একটি করে পার্টনার সেন্টার নিয়ে — প্রতিটি একজন প্রতিষ্ঠিত, শ্রদ্ধেয় স্থানীয় শিক্ষক, এখন যুক্ত জাতীয় পরিচিতির সাথে।",
+                   en: "Somonnoi's network grows one partner center at a time — each one an existing, respected local teacher, now backed by a national identity." },
+    mapLabel: { bn: "[ বাংলাদেশ নেটওয়ার্ক ম্যাপ — placeholder ]", en: "[ Bangladesh network map — placeholder ]" },
+    mapNote1: { bn: "নির্বাচিত পার্টনার কেন্দ্রের অবস্থান দেখানো ইন্টারেক্টিভ ম্যাপ এখানে বসবে।", en: "An interactive map showing selected partner-center locations goes here." },
+    mapNote2: { bn: "পাইলট সেন্টার নিশ্চিত হলে ডেভেলপার Leaflet.js দিয়ে এটি তৈরি করবে।", en: "The developer will build this with Leaflet.js once pilot centers are confirmed." },
+    howH2: { bn: "যেভাবে কাজ করে", en: "How It Works" },
+    stepNum0: { bn: "০১", en: "01" }, stepNum1: { bn: "০২", en: "02" }, stepNum2: { bn: "০৩", en: "03" }, stepNum3: { bn: "০৪", en: "04" },
+    stepTitle0: { bn: "আপনি আবেদন করুন", en: "You apply" },
+    stepDesc0:  { bn: "আপনার কোচিং, শিক্ষার্থী ও এলাকা সম্পর্কে আমাদের জানান। আমরা প্রতিটি পার্টনারকে ব্যক্তিগতভাবে যাচাই করি।", en: "Tell us about your coaching, your students, and your area. We verify every partner personally." },
+    stepTitle1: { bn: "আমরা যুক্ত করি", en: "We onboard" },
+    stepDesc1:  { bn: "ব্র্যান্ড সাইনেজ, শিক্ষক প্রশিক্ষণ, ছাপা উপকরণ — আপনার সেন্টার সমন্বয় নেটওয়ার্কে চালু হয়ে যায়।", en: "Brand signage, teacher training, printed materials — your center goes live on the Somonnoi network." },
+    stepTitle2: { bn: "আমরা প্রচার করি", en: "We promote" },
+    stepDesc2:  { bn: "অনলাইন প্রচার, জাতীয় দৃশ্যমানতা এবং লিডারবোর্ডে স্থান — শিক্ষার্থীরা আপনাকে খুঁজে পায়।", en: "Online marketing, national visibility, and a place on the leaderboard — students find you." },
+    stepTitle3: { bn: "আপনি এগিয়ে যান", en: "You grow" },
+    stepDesc3:  { bn: "আপনি পড়ানো চালিয়ে যান, শিক্ষার্থীদের ফি আপনারই থাকে। একটাই মাসিক ফি — কোনো কমিশন নেই।", en: "You keep teaching, your students' fees stay yours. One flat monthly fee — no commissions." },
+    applyH2:   { bn: "সমন্বয়ের সাথে পার্টনার হোন", en: "Partner with Somonnoi" },
+    applyLead: { bn: "আপনার কোচিং সেন্টার সম্পর্কে আমাদের জানান। আমরা কয়েক দিনের মধ্যে যোগাযোগ করব।", en: "Tell us about your coaching center. We'll be in touch within a few days." },
+    labelName:     { bn: "আপনার নাম", en: "Your name" },
+    labelArea:     { bn: "জেলা / এলাকা", en: "District / area" },
+    labelPhone:    { bn: "ফোন / হোয়াটসঅ্যাপ", en: "Phone / WhatsApp" },
+    labelStudents: { bn: "বর্তমান শিক্ষার্থী সংখ্যা (আনুমানিক)", en: "Current students (approx.)" },
+    submitBtn: { bn: "আবেদন জমা দিন", en: "Submit Application" },
+    formNote:  { bn: "এই ফর্মটি এখন দর্শকের ইমেইল অ্যাপ খুলবে (সাময়িক, লঞ্চের জন্য)। সম্পূর্ণ প্ল্যাটফর্মের সাথে একটি প্রকৃত ব্যাকএন্ড ফর্ম আসবে।",
+               en: "This form currently opens the visitor's email app (temporary, for launch). A real backend form comes with the full platform build." },
+    footerCopy: { bn: "© ২০২৬ সমন্বয়। সর্বস্বত্ব সংরক্ষিত।", en: "© 2026 Somonnoi. All rights reserved." },
+    pageTitle: { bn: "সমন্বয় | Education Network — শিক্ষক, বাড়ির কাছেই", en: "Somonnoi | Education Network — A Teacher, Close to Home" }
+  };
+  var divisions = [
+    { bn: "রাজশাহী", en: "Rajshahi" }, { bn: "রংপুর", en: "Rangpur" }, { bn: "খুলনা", en: "Khulna" },
+    { bn: "ঢাকা", en: "Dhaka" }, { bn: "চট্টগ্রাম", en: "Chattogram" }, { bn: "সিলেট", en: "Sylhet" }
+  ];
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    Object.keys(T).forEach(function(key){
+      var el = document.getElementById(key);
+      if(el) el.textContent = T[key][lang];
+    });
+    document.querySelectorAll('[data-div]').forEach(function(el){
+      el.textContent = divisions[parseInt(el.getAttribute('data-div'), 10)][lang];
+    });
+    document.getElementById('btnBn').classList.toggle('active', lang === 'bn');
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('somonnoi_lang', lang); } catch(e) {}
+  }
+
+  (function(){
+    var saved = 'bn';
+    try { saved = localStorage.getItem('somonnoi_lang') || 'bn'; } catch(e) {}
+    setLang(saved);
+  })();
+</script>
 
 </body>
 </html>
